@@ -1,0 +1,15 @@
+#ifndef CLAStoHS_h
+#define CLAStoHS_h
+
+#include <TROOT.h>
+#include <TChain.h>
+#include <TFile.h>
+#include <TH1F.h>
+#include <TH2F.h>
+#include <TH2.h>
+#include <TF1.h>
+//#include <TLorentzVector.h>
+#include <TSelector.h>
+#include <iostream>
+
+//#include "THSOutput.h"
