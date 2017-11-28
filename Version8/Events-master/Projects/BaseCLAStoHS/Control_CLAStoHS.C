@@ -1,0 +1,35 @@
+{
+  //Set the input files
+   TChain* tree=new TChain("h10","datachain");
+   //tree->Add("/home/dglazier/Work/data/kkpi/data*.root");
+   // tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/ps10mil/PSRun001.root");
+   //   tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/ps10mil/PSRun*.root");
+   //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/First_10mil/ps_flat_*.root");
+   tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Main_100mil/ps_flat_*.root");
+
+
+  
+   //Set the ouput directory or file (if full file name is given just 1 file is created, while if a directory it will be created and filled with files of the same name as the input 
+   gSystem->Setenv("HSOUT",
+		   // "/home/dglazier/Work/data/kkpi/hs3/");
+		   //		   "/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version5Data/1stStageProcessedDatafiles/PhaseSpace10mil/OneFileTest/OneFilePSTest.root");
+		   //"/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version8Data/1stStageProcessedDatafiles/PS10mil/OneFilePSTest.root");
+		   // "/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version8Data/1stStageProcessedDatafiles/PS10mil/FullStatsPS10mil.root");
+		   // "/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Processed_10mil/PS10MilEventsOct2017.root");
+		   //"/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Processed_100mil/PS100MilEventsOct2017.root");
+   "/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Version2_Processed_100mil/PS100MilEventsNoV2017.root");
+
+
+   
+   //Configure the analysis (i.e PROOF, source compilation...)
+   TString HSANA=gSystem->Getenv("HSANA");
+   gROOT->LoadMacro(HSANA+"/HSControl.C");
+   HSControl(kTRUE,kFALSE); //where the proof stuff is set, kTRUE means use PROOF
+   
+   //Use an event list from a previous analysis 
+   //HSEntryList("~dglazier/Work/Research/HaSpect/data/pippippimMn_HS2/ParentEventList.root");
+   
+   //RUN
+   //tree->Process("CLAStoHS.C++","K+:K-:proton");
+   tree->Process("CLAStoHS.C++","proton:pi+:pi-");
+}
