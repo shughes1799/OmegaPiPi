@@ -72,6 +72,12 @@ public :
 
    Double_t MmissGammaP;
 
+   //Simple Corrected Variables to fix GSIM to g11a momentum issues. NOT RIGEROUS.
+   Double_t CorrMassMmiss;
+   Double_t CorrMassOmega;
+   Double_t CorrMassX;
+ 
+
    // List of branches
    TBranch        *b_pim_0;   //!
    TBranch        *b_pip_0;   //!
