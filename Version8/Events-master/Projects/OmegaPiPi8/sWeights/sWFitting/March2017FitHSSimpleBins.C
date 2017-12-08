@@ -8,12 +8,12 @@
 
   //THSsPlot* RF=new THSsPlot("Octp722TOp842FiveBinsMassXB1Cut120MeV");
   //THSsPlot* RF=new THSsPlot("Octp722TOp842FiveBinsMassXRhoCut100MeV");
-  THSsPlot* RF=new THSsPlot("Decp692TOp872FiveBinsMassX100milRecon");
+  THSsPlot* RF=new THSsPlot("Decp692TOp872FiveBinsMassX100milReconCorr6MeV");
 
   //RF->SetOutDir("outBins/SBCompEgamma3p3to3p9");
   //RF->SetOutDir("outBins/OctBasic5BinsMassXRhoCut100MeV");
   //RF->SetOutDir("outBins/Novp722TOp842FiveBinsMassX16FilesRealData");
-  RF->SetOutDir("outBins/Decp692TOp872FiveBinsMassX100milRecon");
+  RF->SetOutDir("outBins/Decp692TOp872FiveBinsMassX100milReconCorr6MeV");
   RF->SetBinnedFit(); //For parameter fits do binned chi2
   RF->SetSPlotRange(0.692,0.872); //Use a differnt range for sFit
  ///////////////////////////////Load Variables
@@ -42,7 +42,7 @@
   //chain.Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version5Data/CorrectedData/Eta1295/600kEventsEta1295MissingOmega.root");
   //chain.Add("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWCutData/Oct2017RhoCut100MeV.root");
   //chain.Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Processed_100mil/CorrectedPS100MilEventsOct2017.root");
-  chain.Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Version2_Processed_100mil/CorrectedPS100MilEventsNoV2017v3.root");
+  chain.Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Version2_Processed_100mil/CorrectedPS100MilEventsDec2017v4.root");
 
 
   RF->SetIDBranchName("fgID");
