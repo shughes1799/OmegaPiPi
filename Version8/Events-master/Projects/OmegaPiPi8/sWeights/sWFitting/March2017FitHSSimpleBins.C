@@ -54,7 +54,7 @@
   //import to RooFit
   RF->LoadDataSet(&chain);
   gBenchmark->Start("Binned");
-  RF->RunWeights(4);//argument gives number of parameter fits to perform
+  RF->RunWeights(10);//argument gives number of parameter fits to perform
   RF->DrawTreeVar("MassX",100,1.1,1.9);
   //RF->DrawTreeVar("M2",100,0,10);
   gBenchmark->Stop("Binned");
