@@ -12,7 +12,9 @@
    //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version5Data/CorrectedData/OmegaMassTest/16FilesNoOmegaMassCorrection.root");
    ///tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version8Data/CorrectedData/PhaseSpace10mil/PS10milCorrected.root");
    //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Processed_10mil/CorrectedPS10MilEventsOct2017.root");
-   tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Processed_100mil/CorrectedPS100MilEventsOct2017.root");
+   //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Processed_100mil/CorrectedPS100MilEventsOct2017.root");
+   tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Version2_Processed_100mil/CorrectedPS100MilEventsNoV2017v3.root");
+
 
 
    //Set the ouput directory or file (if full file name is given just 1 file is created, while if a directory it will be created and filled with files of the same name as the input 
@@ -38,8 +40,11 @@
    //"/phys/linux/s0677668/Haspect/Version4/Events-master/Projects/OmegaPiPi3/Plotting/SBPlots/AcceptanceTestingPlots.root");
    //"/phys/linux/s0677668/Haspect/Version4/Events-master/Projects/OmegaPiPi3/Plotting/SBPlots/PostThesis/Aug2017Sig60SB30Gap20.root");
 		   //  "/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Oct2017PS10MilRecon.root");
-		   "/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Nov2017PS100MilRecon100Signal40SB.root");
+		   //"/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Nov2017PS100MilRecon100Signal40SB.root");
 		   //"/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Nov2017Data16Files100Signal40SB.root");
+		   // "/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Dec2017Data16Files100signal40SBCorr5MeV.root");
+		   "/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Dec2017PS100MilRecon100Signal40SBCorr5MeV.root");
+
    
    //Configure the analysis (i.e PROOF, source compilation...)
    TString HSANA=gSystem->Getenv("HSANA");
