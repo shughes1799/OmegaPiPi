@@ -111,7 +111,8 @@ Bool_t Feb2017sWeightPlotter::Process(Long64_t entry)
    // if(MassOmegaPiP >= 1.160 && MassOmegaPiP < 1.300){
 
    // if(MassX <= 1.82){
-     if(Mmiss >= 0.722 && Mmiss < 0.842){
+   //if(Mmiss >= 0.722 && Mmiss < 0.842){
+   if(Mmiss >= 0.692 && Mmiss < 0.872){
 
        // if((MassOmegaPiP >= 1.16 && MassOmegaPiP < 1.30) || (MassOmegaPiM >= 1.16 && MassOmegaPiM < 1.30)){
 
