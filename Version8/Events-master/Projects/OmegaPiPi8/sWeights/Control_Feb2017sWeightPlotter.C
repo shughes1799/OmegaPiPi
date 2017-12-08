@@ -19,7 +19,7 @@
 		   //"/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Nov2017/Nov20175BinsMassX16FilesRealData.root");
 		   // "/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Nov2017/Nov20175BinsMassXPS100MilRecon.root");
 		   //"/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Dec2017/Dec20175BinsMassXPS100MilReconCorr6MeVRegularRange.root");
-		   "/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Dec2017/Dec20175BinsMassX16FilesRealDataWideWidths.root");
+		   "/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Dec2017/Dec20175BinsMassX16FilesRealDataRegularWidths.root");
 
 
    //Configure the analysis (i.e PROOF, source compilation...)
@@ -43,7 +43,7 @@
    // tree->Process("Feb2017sWeightPlotter.C++","/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWFitting/outBins/Octp722TOp842FiveBinsMassXPhaseSpaceMC100mil/WeightsOctp722TOp842FiveBinsMassXPhaseSpaceMC100mil.root:WeightMap");
    //tree->Process("Feb2017sWeightPlotter.C++","/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWFitting/outBins/Novp722TOp842FiveBinsMassX16FilesRealData/WeightsNovp722TOp842FiveBinsMassX16FilesRealData.root:WeightMap");
    //tree->Process("Feb2017sWeightPlotter.C++","/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWFitting/outBins/Decp7222TOp842FiveBinsMassX100milReconCorr6MeV/WeightsDecp722TOp842FiveBinsMassX100milReconCorr6MeV.root:WeightMap");
-   tree->Process("Feb2017sWeightPlotter.C++","/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWFitting/outBins/Decp692TOp872FiveBinsMassX16FilesRealData/WeightsDecp692TOp872FiveBinsMassX16FilesRealData.root:WeightMap");
+   tree->Process("Feb2017sWeightPlotter.C++","/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWFitting/outBins/Decp722TOp842FiveBinsMassX16FilesRealData/WeightsDecp722TOp842FiveBinsMassX16FilesRealData.root:WeightMap");
 
 
    //Not actually sure if this is needed or not...
