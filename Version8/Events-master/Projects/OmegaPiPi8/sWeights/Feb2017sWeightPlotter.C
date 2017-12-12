@@ -111,7 +111,8 @@ Bool_t Feb2017sWeightPlotter::Process(Long64_t entry)
    // if(MassOmegaPiP >= 1.160 && MassOmegaPiP < 1.300){
 
    // if(MassX <= 1.82){
-     if(Mmiss >= 0.722 && Mmiss < 0.842){
+   if(Mmiss >= 0.722 && Mmiss < 0.842){
+   // if(Mmiss >= 0.692 && Mmiss < 0.872){
 
        // if((MassOmegaPiP >= 1.16 && MassOmegaPiP < 1.30) || (MassOmegaPiM >= 1.16 && MassOmegaPiM < 1.30)){
 
@@ -157,8 +158,8 @@ void Feb2017sWeightPlotter::HistogramList(TString sLabel){
   //now define all histograms and add to Output
   //label includes kinematic bin and additional cut name
   // e.g fOutput->Add(MapHist(new TH1F("Mp1"+sLabel,"M_{p1}"+sLabel,100,0,2)));
-  fOutput->Add(MapHist(new TH1F("MmissRecon"+sLabel,"Missing Mass (GeV) "+sLabel,180,0.69,0.87)));
-  fOutput->Add(MapHist(new TH1F("MXRecon"+sLabel,"Mass of X (GeV) "+sLabel,180,1.1,1.9)));
+  fOutput->Add(MapHist(new TH1F("Mmiss"+sLabel,"Missing Mass (GeV) "+sLabel,180,0.69,0.87)));
+  fOutput->Add(MapHist(new TH1F("MX"+sLabel,"Mass of X (GeV) "+sLabel,180,1.1,1.9)));
   // fOutput->Add(MapHist(new TH1F("MX100"+sLabel,"Mass of X (GeV) "+sLabel,100,1.1,1.9)));
   // fOutput->Add(MapHist(new TH1F("t"+sLabel,"t distribution (GeV) "+sLabel,180,0,5)));
   // fOutput->Add(MapHist(new TH1F("Egamma"+sLabel,"Egamma distribution (GeV) "+sLabel,180,0,5)));
@@ -253,8 +254,8 @@ void Feb2017sWeightPlotter::FillHistograms(TString sCut,Int_t bin){
  //Find and fill weighted hist below here
  //e.g. FindHist("Mp1")->Fill(fp1->M(),Weight);
  //e.g. ((TH2F*)FindHist("Mp1VMmiss"))->Fill(fp1->M(),Mmiss,Weight);
-   FindHist("MmissRecon")->Fill(Mmiss,Weight);
-   FindHist("MXRecon")->Fill(MassX,Weight);
+   FindHist("Mmiss")->Fill(Mmiss,Weight);
+   FindHist("MX")->Fill(MassX,Weight);
    // FindHist("MX100")->Fill(MassX,Weight);
    // FindHist("t")->Fill(t,Weight);
    // FindHist("Egamma")->Fill(Egamma,Weight);

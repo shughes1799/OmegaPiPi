@@ -3,7 +3,8 @@
 
   //TFile *f = new TFile("March2017Eta1295MCNormT0to1.root","RECREATE");
   //TFile *f = new TFile("March2017BasicNoOmegaMassCorrNormalisation.root","RECREATE");
-  TFile *f = new TFile("TestAcceptanceNov2017SidebandSub.root","RECREATE");
+  //TFile *f = new TFile("TestAcceptanceNov2017SidebandSub.root","RECREATE");
+  TFile *f = new TFile("AcceptanceDec2017sWeightedRegularWidth.root","RECREATE");
 
  //TFile *myFile = TFile::Open("Dec2016TestRun4.root");
  // TFile *myFile = TFile::Open("Jan2017Normalisation2HalfWidthSB1675Rho.root");
@@ -41,7 +42,9 @@
   // MC->ProjectionY("MCRight",91,120)->Draw();
   // MC_Right = MCRight;
 
+  //*****************************************************************************************
   //Populating the MonteCarloData
+  //*****************************************************************************************
 
   //TFile *myFile = TFile::Open("/home/s0677668/Haspect/Acceptance/Oct2017/PSFirst10mil.root");
   TFile *myFile = TFile::Open("/home/s0677668/Haspect/Acceptance/Oct2017/PSMain100mil.root");
@@ -56,26 +59,41 @@
   MCMassOmegaPiPi->SetDirectory(f);
 
 
-
+  //*****************************************************************************************
   //Populating the histograms of the reconstructed monte carlo data.
-  
+  //*****************************************************************************************
+
   //TFile *myFile = TFile::Open("May2017ErrorPhaseSpace10MilAccTest.root");
   //TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Oct2017PS10MilRecon.root");
   //TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Nov2017/Nov20175BinsMassXPS100MilRecon.root");
-  TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Nov2017PS100MilRecon100Signal40SBSubtracted.root");
+  //TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Nov2017PS100MilRecon100Signal40SBSubtracted.root");
+
+  //sWeighted
+  TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Dec2017/Dec20175BinsMassXPS100MilReconCorr6MeVRegularRange.root"); //60 Signal Region, 30 SB, for 120 Total Width, includes -6 MeV flat correction to missing mass
+  //TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Dec2017/Dec20175BinsMassXPS100MilReconCorr6MeV.root");  //120 Signal Region,40 SB, for 180 total width, includes -6 MeV flat correction to missing mass
 
 
-  //TH1F *ReconMassOmega;
+  //Sideband Subtracted
+
+
+
+  TH1F *ReconMassOmega;
   TH1F *ReconMassOmegaPiPi;
 
   //ReconMassOmega = MmissMCReconAll_All;
   //ReconMassOmegaPiPi = MXFullMCReconAll_All;
 
   //ReconMassOmega = MmissMCReconSignal_All;
-  ReconMassOmegaPiPi = MassXSBMCRecon;
+  //ReconMassOmegaPiPi = MassXSBMCRecon;
+ 
+  ReconMassOmega = MmissReconSignal_All;
+  ReconMassOmegaPiPi = MXReconSignal_All;
 
-  //ReconMassOmega->SetDirectory(f);
+
+  ReconMassOmega->SetDirectory(f);
   ReconMassOmegaPiPi->SetDirectory(f);
+
+
 
 
   // TH2F *Recon;
@@ -109,6 +127,13 @@
 
   //*****************  DON'T FORGET ABOUT Sumw2 TO GET ERRORS TO WORK  ********************************
 
+
+
+  //*****************************************************************************************
+  // Calculating the acceptance between the monte carlo and the reconstructed
+  //*****************************************************************************************
+
+
   // //Acceptance = (*Recon)/(*MC);
   // //Acceptance_Left->Divide(Recon_Left,MC_Left);
   // //Acceptance_Left = (Recon_Left)/(MC_Left);
@@ -139,9 +164,17 @@
 
   //***************************************************************************************************
   //Implimenting the weighting on a histogram.
+  //***************************************************************************************************
+
 
   //TFile *myFile = TFile::Open("/phys/linux/s0677668/Haspect/Version4/Events-master/Projects/OmegaPiPi3/Plotting/SBPlots/AcceptanceTestingPlotsOct2017.root");
-  TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Nov2017/Nov20175BinsMassX16FilesRealData.root");
+  //TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Nov2017/Nov20175BinsMassX16FilesRealData.root");
+
+  //sWeighted Datasets
+ TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Dec2017/Dec20175BinsMassX16FilesRealDataRegularWidths.root"); //60 Signal Region, 30 SB, for 120 Total Width
+ //TFile *myFile = TFile::Open("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWPlots/Dec2017/Dec20175BinsMassX16FilesRealDataWideWidths.root"); //120 Signal Region,40 SB,
+
+//Sideband Subtracted
 
  // TH1F* AccCorMassXLeft;
  // TH1F* AccCorMassXSignal;
@@ -157,7 +190,7 @@
   //AccCorMassOmegaTest = MmissAll_All;
   //AccCorMassOmegaPiPiTest = MXFullAll_All;
 
-  AccCorMassOmegaTest = MmissSignal_All;
+  //AccCorMassOmegaTest = MmissSignal_All;
   AccCorMassOmegaPiPiTest = MXSignal_All;
 
  // AccCorMassXLeft->Multiply(Acceptance_Left);
@@ -167,7 +200,7 @@
   //AccCorMassOmegaTest->Multiply(AcceptanceOmega_All);
   //AccCorMassOmegaPiPiTest->Multiply(AcceptanceOmegaPiPi_All);
 
-  AccCorMassOmegaTest->Divide(AcceptanceOmega_All);
+  //AccCorMassOmegaTest->Divide(AcceptanceOmega_All);
   AccCorMassOmegaPiPiTest->Divide(AcceptanceOmegaPiPi_All);
 
   //AccCorMassOmegaTest->SetDirectory(f);

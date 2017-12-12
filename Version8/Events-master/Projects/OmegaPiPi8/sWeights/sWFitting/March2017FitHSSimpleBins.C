@@ -8,15 +8,21 @@
 
   //THSsPlot* RF=new THSsPlot("Octp722TOp842FiveBinsMassXB1Cut120MeV");
   //THSsPlot* RF=new THSsPlot("Octp722TOp842FiveBinsMassXRhoCut100MeV");
-  THSsPlot* RF=new THSsPlot("Novp722TOp842FiveBinsMassX16FilesRealData");
+  //THSsPlot* RF=new THSsPlot("Decp692TOp872FiveBinsMassX100milReconCorr6MeV");
+  //THSsPlot* RF=new THSsPlot("Decp722TOp842FiveBinsMassX100milReconCorr6MeV");
+  //THSsPlot* RF=new THSsPlot("Decp722TOp842FiveBinsMassX16FilesRealData");
+  THSsPlot* RF=new THSsPlot("Decp692TOp872FiveBinsMassX16FilesRealData");
 
   //RF->SetOutDir("outBins/SBCompEgamma3p3to3p9");
   //RF->SetOutDir("outBins/OctBasic5BinsMassXRhoCut100MeV");
-  RF->SetOutDir("outBins/Novp722TOp842FiveBinsMassX16FilesRealData");
+  //RF->SetOutDir("outBins/Novp722TOp842FiveBinsMassX16FilesRealData");
+  //RF->SetOutDir("outBins/Decp7222TOp842FiveBinsMassX100milReconCorr6MeV");
+  RF->SetOutDir("outBins/Decp692TOp872FiveBinsMassX16FilesRealData");
+
   RF->SetBinnedFit(); //For parameter fits do binned chi2
-  RF->SetSPlotRange(0.722,0.842); //Use a differnt range for sFit
+  RF->SetSPlotRange(0.692,0.872); //Use a differnt range for sFit
  ///////////////////////////////Load Variables
-  RF->LoadVariable("Mmiss[0.722,0.842]");//should be same name as variable in tree
+  RF->LoadVariable("Mmiss[0.692,0.872]");//should be same name as variable in tree
   // RF->LoadBinVars("Egamma",1,3.3,3.9);//should be same name as variable in tree 
   RF->LoadBinVars("MassX",5,1.1,1.9);//should be same name as variable in tree 
   //RF->LoadBinVars("t",1,2,5);//should be same name as variable in tree
@@ -41,13 +47,14 @@
   //chain.Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version5Data/CorrectedData/Eta1295/600kEventsEta1295MissingOmega.root");
   //chain.Add("/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWCutData/Oct2017RhoCut100MeV.root");
   //chain.Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Processed_100mil/CorrectedPS100MilEventsOct2017.root");
+  //chain.Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Version2_Processed_100mil/CorrectedPS100MilEventsDec2017v4.root");
 
 
   RF->SetIDBranchName("fgID");
   //import to RooFit
   RF->LoadDataSet(&chain);
   gBenchmark->Start("Binned");
-  RF->RunWeights(4);//argument gives number of parameter fits to perform
+  RF->RunWeights(10);//argument gives number of parameter fits to perform
   RF->DrawTreeVar("MassX",100,1.1,1.9);
   //RF->DrawTreeVar("M2",100,0,10);
   gBenchmark->Stop("Binned");
