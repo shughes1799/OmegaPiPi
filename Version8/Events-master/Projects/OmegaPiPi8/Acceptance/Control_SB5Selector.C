@@ -6,7 +6,7 @@
    //tree->Add("/phys/linux/s0677668/Haspect/OmegaPiPPiMPDataPortion/2016/May/GeneratedData/1milPhaseSpace/g11_simon_centos610*.bos.evt.recsis.root");
    // tree->Add("/phys/linux/s0677668/Haspect/OmegaPiPPiMPDataPortion/2016/May/GeneratedData/1milA2Decays/A2Decays*.root");
    // tree->Add("/phys/linux/s0677668/Haspect/OmegaPiPPiMPDataPortion/2016/May/GeneratedData/10milPSDecays/PSTestFullPhiMissOmega1.root");
-   tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version5Data/CorrectedData/16FilesID/Test16FilesLPS.root");  // IMPORTANT FILE
+   //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version5Data/CorrectedData/16FilesID/Test16FilesLPS.root");  // IMPORTANT FILE
    // tree->Add("/phys/linux/s0677668/Haspect/OmegaPiPPiMPDataPortion/2016/May/GeneratedData/10milPSDecays/PSTestFullPhiMissOmega1.root");
    //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version5Data/CorrectedData/Eta1295/600kEventsEta1295MissingOmega.root");
    //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/Version5Data/CorrectedData/OmegaMassTest/16FilesNoOmegaMassCorrection.root");
@@ -14,6 +14,7 @@
    //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Processed_10mil/CorrectedPS10MilEventsOct2017.root");
    //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Processed_100mil/CorrectedPS100MilEventsOct2017.root");
    //tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Version2_Processed_100mil/CorrectedPS100MilEventsNoV2017v3.root");
+   tree->Add("/Disk/ds-sopa-group/np/thehubdata/thehub6/shughes/Haspect/OmegaPiPi/GeneratedEvents/August2017/Phase_Space_Flat_100mil/Version2_Processed_100mil/CorrectedPS100MilEventsDec2017v4.root");
 
 
 
@@ -44,7 +45,8 @@
 		   //"/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Nov2017Data16Files100Signal40SB.root");
 		   //"/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Dec2017Data16Files100signal40SBCorr5MeV.root");
 		   //"/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Dec2017PS100MilRecon100Signal40SBCorr5MeV.root");
-		   "/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Dec2017Data16Files60Signal30SB.root");
+		   //"/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Dec2017Data16Files60Signal30SB.root");
+		   "/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Dec2017PS100MilRecon60Signal30SBCorr6MeV.root");
 
    
    //Configure the analysis (i.e PROOF, source compilation...)

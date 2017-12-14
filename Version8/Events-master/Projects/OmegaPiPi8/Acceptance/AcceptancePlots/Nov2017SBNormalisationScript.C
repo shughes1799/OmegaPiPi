@@ -5,7 +5,8 @@
   //TFile *f = new TFile("March2017BasicNoOmegaMassCorrNormalisation.root","RECREATE");
   //TFile *f = new TFile("Nov2017Data16Files100Signal40SBNorm.root","RECREATE");
   //TFile *f = new TFile("Nov2017PS100MilRecon100Signal40SBNorm.root","RECREATE");
-  TFile *f = new TFile("Dec2017Data16Files60Signal30SBNorm.root","RECREATE");
+  // TFile *f = new TFile("Dec2017Data16Files60Signal30SBNorm.root","RECREATE");
+  TFile *f = new TFile("Dec2017PS100MilRecon60Signal30SBCorr6MeVNorm.root","RECREATE");
 
  //TFile *myFile = TFile::Open("Dec2016TestRun4.root");
  // TFile *myFile = TFile::Open("Jan2017Normalisation2HalfWidthSB1675Rho.root");
@@ -24,7 +25,8 @@
   //TFile *myFile = TFile::Open("Nov2017PS100milRecon100Signal40SB.root");
   //TFile *myFile = TFile::Open("Nov2017PS100MilRecon100Signal40SB.root");
   //TFile *myFile = TFile::Open("Dec2017Data16Files60Signal30SB.root");
-  TFile *myFile = TFile::Open("Dec2017Data16Files60Signal30SB.root");
+  //TFile *myFile = TFile::Open("Dec2017Data16Files60Signal30SB.root");
+  TFile *myFile = TFile::Open("Dec2017PS100MilRecon60Signal30SBCorr6MeV.root");
 
  //TH2F *MassOmegavsMassXSB = new TH2F("MassOmegavsMassXSB", "Sideband subtracted Mass Omega vs Mass X;Mass #omega (GeV);MassX (GeV)",100,0.69,0.88,100,1.1,1.9);
  
@@ -37,8 +39,8 @@
  TF1 *total7 = new TF1("total7","pol3(0)",0.722,0.842);
  total7->SetLineColor(3);
  
- slice_histo7 = MmissSide_All;
- //slice_histo7 = MmissMCReconSide_All;
+ //slice_histo7 = MmissSide_All;
+ slice_histo7 = MmissMCReconSide_All;
 
  //slice_histo7 = MOmvsMXSide1_All->ProjectionX("Slice7 Fit",1,20);
  //slice_histo7 = MOmvsMXSide2_All->ProjectionX("Slice7 Fit",21,30);
