@@ -4,7 +4,8 @@
   //TFile *f = new TFile("March2017Eta1295MCNormT0to1.root","RECREATE");
   //TFile *f = new TFile("March2017BasicNoOmegaMassCorrNormalisation.root","RECREATE");
   //TFile *f = new TFile("Nov2017Data16Files100Signal40SBNorm.root","RECREATE");
-  TFile *f = new TFile("Nov2017PS100MilRecon100Signal40SBNorm.root","RECREATE");
+  //TFile *f = new TFile("Nov2017PS100MilRecon100Signal40SBNorm.root","RECREATE");
+  TFile *f = new TFile("Dec2017Data16Files60Signal30SBNorm.root","RECREATE");
 
  //TFile *myFile = TFile::Open("Dec2016TestRun4.root");
  // TFile *myFile = TFile::Open("Jan2017Normalisation2HalfWidthSB1675Rho.root");
@@ -21,7 +22,9 @@
   //TFile *myFile = TFile::Open("Aug2017Sig60SB30Gap30.root");
   //TFile *myFile = TFile::Open("Nov2017Data16Files100Signal40SB.root");
   //TFile *myFile = TFile::Open("Nov2017PS100milRecon100Signal40SB.root");
-  TFile *myFile = TFile::Open("Nov2017PS100MilRecon100Signal40SB.root");
+  //TFile *myFile = TFile::Open("Nov2017PS100MilRecon100Signal40SB.root");
+  //TFile *myFile = TFile::Open("Dec2017Data16Files60Signal30SB.root");
+  TFile *myFile = TFile::Open("Dec2017Data16Files60Signal30SB.root");
 
  //TH2F *MassOmegavsMassXSB = new TH2F("MassOmegavsMassXSB", "Sideband subtracted Mass Omega vs Mass X;Mass #omega (GeV);MassX (GeV)",100,0.69,0.88,100,1.1,1.9);
  
@@ -30,12 +33,12 @@
  Double_t par7[7];
  TH1F *slice_histo7;
  TF1 *s7g2    = new TF1("s7g2","gaus",0.765,0.80);
- TF1 *s7g1    = new TF1("s7g1","pol3",0.85,0.87);
- TF1 *total7 = new TF1("total7","pol3(0)",0.692,0.872);
+ TF1 *s7g1    = new TF1("s7g1","pol3",0.82,0.84);
+ TF1 *total7 = new TF1("total7","pol3(0)",0.722,0.842);
  total7->SetLineColor(3);
  
- // slice_histo7 = MmissSide_All;
- slice_histo7 = MmissMCReconSide_All;
+ slice_histo7 = MmissSide_All;
+ //slice_histo7 = MmissMCReconSide_All;
 
  //slice_histo7 = MOmvsMXSide1_All->ProjectionX("Slice7 Fit",1,20);
  //slice_histo7 = MOmvsMXSide2_All->ProjectionX("Slice7 Fit",21,30);
@@ -56,10 +59,10 @@
  slice_histo7->Draw();
  slice_histo7->SetDirectory(f);
 
- Double_t IntegralLeft=total7->Integral(0.692, 0.732);
- Double_t IntegralMiddle=total7->Integral(0.732, 0.832);
- Double_t IntegralRight=total7->Integral(0.832, 0.872);
- Double_t IntegralTotal=total7->Integral(0.692, 0.872);
+ Double_t IntegralLeft=total7->Integral(0.722, 0.752);
+ Double_t IntegralMiddle=total7->Integral(0.752, 0.812);
+ Double_t IntegralRight=total7->Integral(0.812, 0.842);
+ Double_t IntegralTotal=total7->Integral(0.722, 0.842);
 
  cout << "Integral of Left Events " << IntegralLeft << endl;
  cout << "Integral of Middle Events " << IntegralMiddle << endl;

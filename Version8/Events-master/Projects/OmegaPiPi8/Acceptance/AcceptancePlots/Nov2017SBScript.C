@@ -9,7 +9,8 @@
   //TFile *f = new TFile("May2017ErrorBase180BinsSubtractedAdjNorm.root","RECREATE");
   //TFile *f = new TFile("Aug2017Sig60SB30Gap30Subtracted.root","RECREATE");
   //TFile *f = new TFile("Nov2017Data16Files100Signal40SBSubtracted.root","RECREATE");
-  TFile *f = new TFile("Nov2017PS100MilRecon100Signal40SBSubtracted.root","RECREATE");
+  //TFile *f = new TFile("Nov2017PS100MilRecon100Signal40SBSubtracted.root","RECREATE");
+  TFile *f = new TFile("Dec2017Data16Files60Signal30SBSubtracted.root","RECREATE");
 
   //TFile *myFile = TFile::Open("March2017BinnedT2to5MX1p25to1p33.root");
   //TFile *myFile = TFile::Open("March2017Basic.root");
@@ -22,14 +23,15 @@
   //TFile *myFile = TFile::Open("May2017ErrorBase180Bins.root");
   //TFile *myFile = TFile::Open("Aug2017Sig60SB30Gap30.root");
   //TFile *myFile = TFile::Open("Nov2017Data16Files100Signal40SB.root");
-  TFile *myFile = TFile::Open("Nov2017PS100MilRecon100Signal40SB.root");
+  //TFile *myFile = TFile::Open("Nov2017PS100MilRecon100Signal40SB.root");
+  TFile *myFile = TFile::Open("Dec2017Data16Files60Signal30SB.root");
   
 
   //Normalisation Parameters
 
-  Double_t leftBack = 395.861;
-  Double_t signalBack = 864.553;
-  Double_t rightBack = 238.936;
+  Double_t leftBack = 1178.15;
+  Double_t signalBack = 1996.66;
+  Double_t rightBack = 784.718;
   Double_t combNorm = signalBack/(leftBack+rightBack);
 
 
@@ -37,8 +39,9 @@
 
   // TTreeReader myReader("ntuple", myFile);
 
-  //TH1F *MassXSB = new TH1F("MassXSB", "Sideband subtracted Mass X;Mass(GeV)", 180, 1.1, 1.9);
-  TH1F *MassXSBMCRecon = new TH1F("MassXSBMCRecon", "Sideband subtracted Mass X;Mass(GeV)", 180, 1.1, 1.9);
+  
+  TH1F *MassXSB = new TH1F("MassXSB", "Sideband subtracted Mass X;Mass(GeV)", 180, 1.1, 1.9);
+  // TH1F *MassXSBMCRecon = new TH1F("MassXSBMCRecon", "Sideband subtracted Mass X;Mass(GeV)", 180, 1.1, 1.9);
 
   // TH1F *MassPiPProSB = new TH1F("MassPiPProSB", "Sideband Subtracted p#pi^{+};Mass(GeV)", 180, 1.05, 1.8);
   // TH1F *MassPiMProSB = new TH1F("MassPiMProSB", "Sideband Subtracted p#pi^{-};Mass(GeV)", 180, 1.05, 1.8);
@@ -62,10 +65,10 @@
   for(int l=1;l<181;l++){
     
   //Normalised Sideband subtraction of signal region for MassX
-  Double_t bgXL = MXFullMCReconLeft_All->GetBinContent(l);
-  Double_t bgXR = MXFullMCReconRight_All->GetBinContent(l);
-  Double_t bgXSide = MXFullMCReconSide_All->GetBinContent(l);
-  Double_t bgXSideEr = MXFullMCReconSide_All->GetBinError(l);
+  Double_t bgXL = MXFullLeft_All->GetBinContent(l);
+  Double_t bgXR = MXFullRight_All->GetBinContent(l);
+  Double_t bgXSide = MXFullSide_All->GetBinContent(l);
+  Double_t bgXSideEr = MXFullSide_All->GetBinError(l);
   // cout << "Side Value and Bin Error " << bgXSide  << " "<< bgXSideEr << endl;
   //cout << "Left Value and Bin Error " << bgXL  << " "<<bgXEr << endl;
   bgXL = bgXL*combNorm;
@@ -76,8 +79,8 @@
   Double_t bgComb;
   bgComb = bgXL+bgXR;
   // bgXEr = bgXEr/2; //This is wrong
-  Double_t signalX = MXFullMCReconSignal_All->GetBinContent(l);
-  Double_t signalXEr = MXFullMCReconSignal_All->GetBinError(l);
+  Double_t signalX = MXFullSignal_All->GetBinContent(l);
+  Double_t signalXEr = MXFullSignal_All->GetBinError(l);
   //cout << "Signal Value and Bin Error (Norm) " << signalX  << " "<< signalXEr << endl;
   //Double_t subtractedX = signalX-bgComb;
   Double_t subtractedX = signalX-bgXSide;
@@ -87,8 +90,8 @@
   Double_t subtractedXEr = TMath::Sqrt(ErrorStep); 
   //Double_t subtractedXEr = ErrorStep^(0.5); //this is wrong
   //cout << "Subtracted Value and Bin Error (Norm) " << subtractedX  << " "<< subtractedXEr << endl;
-  MassXSBMCRecon->SetBinContent(l,subtractedX);
-  MassXSBMCRecon->SetBinError(l,subtractedXEr);
+  MassXSB->SetBinContent(l,subtractedX);
+  MassXSB->SetBinError(l,subtractedXEr);
 
  // //Normalised Sideband subtraction of signal region for PiPPro
  //  Double_t bgXL = MPiPProLeft_All->GetBinContent(l);
@@ -326,7 +329,7 @@
     // }
   j2=1;
   
-  MassXSBMCRecon->SetDirectory(f);
+  MassXSB->SetDirectory(f);
   // MassPiPProSB->SetDirectory(f);
   // MassPiMProSB->SetDirectory(f);
   // MassOmPiPSB->SetDirectory(f);

@@ -171,19 +171,19 @@ Bool_t SB5Selector::Process(Long64_t entry)
    //if(Egamma >= 3.3 && Egamma < 3.9){
    //if(MassX >= 1.25 && MassX <1.33){
        
-   //if(Mmiss >= 0.722 && Mmiss < 0.752){
-   if(Mmiss >= 0.692 && Mmiss < 0.732){
+   if(Mmiss >= 0.722 && Mmiss < 0.752){   // 30 width sideband
+   //if(Mmiss >= 0.692 && Mmiss < 0.732){ //40 width sideband
      FillHistograms("Side",0);
      FillHistograms("Left",0);
      FillHistograms("SigAndSide",0);
    }
-   // if(Mmiss >= 0.752 && Mmiss < 0.812){
-   if(Mmiss >= 0.732 && Mmiss < 0.832){
+   if(Mmiss >= 0.752 && Mmiss < 0.812){  //60 width signal
+   //if(Mmiss >= 0.732 && Mmiss < 0.832){ //100 width signal
      FillHistograms("Signal",0);
      FillHistograms("SigAndSide",0);
    }
-   // if(Mmiss >= 0.812 && Mmiss < 0.842){
-   if(Mmiss >= 0.832 && Mmiss < 0.872){
+   if(Mmiss >= 0.812 && Mmiss < 0.842){ //30 width sideband
+   //if(Mmiss >= 0.832 && Mmiss < 0.872){ //40 width sideband
      FillHistograms("Side",0);
      FillHistograms("Right",0);
      FillHistograms("SigAndSide",0);
@@ -392,10 +392,10 @@ void SB5Selector::HistogramList(TString sLabel){
   //fOutput->Add(MapHist(new TH2F("MXvsMOm"+sLabel,"MassX vs Mass_{Omega};MassX;Mass_{Omega}"+sLabel,100,1.1,1.9,100,0.69,0.88)));
 
   //fOutput->Add(MapHist(new TH1F("Mmiss"+sLabel,"Missing Mass"+sLabel,180,0.692,0.872)));
-  fOutput->Add(MapHist(new TH1F("MmissMCRecon"+sLabel,"Missing Mass"+sLabel,180,0.692,0.872)));
+  fOutput->Add(MapHist(new TH1F("Mmiss"+sLabel,"Missing Mass"+sLabel,180,0.692,0.872)));
 
   //fOutput->Add(MapHist(new TH1F("MXFull"+sLabel,"M_{X}"+sLabel,180,1.1,1.9)));
-  fOutput->Add(MapHist(new TH1F("MXFullMCRecon"+sLabel,"M_{X}"+sLabel,180,1.1,1.9)));
+  fOutput->Add(MapHist(new TH1F("MXFull"+sLabel,"M_{X}"+sLabel,180,1.1,1.9)));
   //fOutput->Add(MapHist(new TH1F("MX"+sLabel,"M_{X}"+sLabel,50,1.22,1.42)));
 
   //fOutput->Add(MapHist(new TH1F("MPiPPro"+sLabel,"MPiPPro"+sLabel,180,1.05,1.8)));
@@ -488,8 +488,8 @@ void SB5Selector::FillHistograms(TString sCut,Int_t bin){
   //  FindHist("Mmiss")->Fill(Mmiss);
   //FindHist("MXFull")->Fill(MassX);
 
-  FindHist("MmissMCRecon")->Fill(Mmiss);
-  FindHist("MXFullMCRecon")->Fill(MassX);
+  FindHist("Mmiss")->Fill(Mmiss);
+  FindHist("MXFull")->Fill(MassX);
   
   //FindHist("MX")->Fill(MassX);
 
