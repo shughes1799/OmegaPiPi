@@ -92,33 +92,45 @@ Background Subtraction usin either Sideband Subtraction and sWeights.
 
 Stage 3a: Sideband Subtraction
 Produce histograms for signal and sideband regions.
+
 	/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/Control_SB5Selector.C
 	/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/SB5Selector.C
 	/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/SB5Selector.h
 
 Fit polynomial to the sideband histograms of the missing mass, to determine normalisation values for the sidesbands.
+
 	/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Nov2017SBNormalisationScript.C
+	
 Normalise sideband regions based on fit and subtract from signal region.
+
 	/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/Acceptance/AcceptancePlots/Nov2017SBScript.C
 	
 Stage 3b: sWeights Subtraction
 
 Fit discriminating variable (missing mass) using a guassian (signal) and a 3rd order Chebychev polynomial (background) around the omega peak to create event by event weights.
+
 	/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/sWFitting/March2017FitHSSimpleBins.C
+	
 Apply weights to dataset produced in stage 2 to produce weighted histograms.
+
 	/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/Control_Feb2017sWeightPlotter.C
  	/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/Feb2017sWeightPlotter.C
  	/home/s0677668/Haspect/Version8/Events-master/Projects/OmegaPiPi8/sWeights/Feb2017sWeightPlotter.h
 
 Stage 4:
 Further scripts for fits to the histograms (Folder)
+
 	/home/s0677668/Haspect/Version4/Events-	master/Projects/OmegaPiPi3/Plotting/SBPlots/PreSubmissionScripts/
+	
 Acceptance corrections for the histograms
+
 	/home/s0677668/Haspect/Acceptance/Oct2017/Oct2017AcceptanceCorr2.C
 	/home/s0677668/Haspect/Acceptance/Oct2017/run_analysis_acceptance3.C
 	/home/s0677668/Haspect/Acceptance/Oct2017/analysis_acceptance3.C
 	/home/s0677668/Haspect/Acceptance/Oct2017/analysis_acceptance3.h
+	
 Tests for beam-walk in the datafiles
+
 	/home/s0677668/Haspect/Scripts/May2017BeamWalk.C 
 	/home/s0677668/Haspect/Scripts/May2017BeamWalk.h 
 
